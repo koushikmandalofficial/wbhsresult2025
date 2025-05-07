@@ -199,8 +199,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Percentage cell
                 const percentCell = document.createElement('td');
-                if (percentile !== '-') {
-                    percentCell.textContent = formatPercentage(percentile) + '%';
+                if ( !== '-') {
+                    percentCell.textContent = formatPercentage(percentile);
                 } else {
                     percentCell.textContent = '-';
                 }
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
         totalMarks.textContent = data.totalMarks || '-';
         
         if (data.totalPercent) {
-            totalPercent.textContent = formatPercentage(data.totalPercent) + '%';
+            totalPercent.textContent = formatPercentage(data.totalPercent)';
         } else {
             totalPercent.textContent = '-';
         }
