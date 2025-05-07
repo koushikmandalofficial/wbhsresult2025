@@ -523,3 +523,39 @@ footer {
         padding: 0;
     }
 }
+
+.subject-set {
+    display: inline-block;
+    font-size: 10px;
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--primary-color);
+    padding: 1px 4px;
+    border-radius: 3px;
+    margin-left: 4px;
+    font-weight: 600;
+}
+
+.subject-type {
+    display: inline-block;
+    font-size: 10px;
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--download-color);
+    padding: 1px 4px;
+    border-radius: 3px;
+    margin-left: 4px;
+    font-weight: 600;
+}
+
+/* Make the table more responsive for the additional information */
+@media (max-width: 992px) {
+    table th, table td {
+        padding: 8px 6px;
+        font-size: 12px;
+    }
+    
+    .subject-set, .subject-type {
+        display: block;
+        margin-top: 2px;
+        margin-left: 0;
+    }
+}
