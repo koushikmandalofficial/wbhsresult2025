@@ -585,7 +585,7 @@ document.addEventListener('DOMContentLoaded', function() {
             pdf.text('Theory', 70, 90);
             pdf.text('Practical', 90, 90);
             pdf.text('Total', 115, 90);
-            pdf.text('Percentage', 135, 90);
+            pdf.text('Percentile', 135, 90);
             pdf.text('Grade', 165, 90);
             
             // Table rows
