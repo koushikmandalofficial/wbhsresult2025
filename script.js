@@ -22,26 +22,89 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalPercent = document.getElementById('total-percent');
     const finalGrade = document.getElementById('final-grade');
     const resultStatus = document.getElementById('result-status');
-    
-    // Subject code mapping for display names
+
     const subjectCodeMapping = {
+        // Language Group - First Language
+        'ENGA': 'English',
         'BNGA': 'Bengali',
+        'HINA': 'Hindi',
+        'NEPA': 'Nepali',
+        'URDU': 'Urdu',
+        'SANT': 'Santhali',
+        'ODIA': 'Odia',
+        'TELG': 'Telugu',
+        'GJRT': 'Gujarati',
+        'PNJB': 'Punjabi',
+        
+        // Language Group - Second Language
         'ENGB': 'English',
-        'HMFR': 'Home Management & Family Resource',
-        'NUTN': 'Nutrition',
-        'PSYC': 'Psychology',
-        'COMA': 'Computer Application',
+        'BNGB': 'Bengali',
+        'HINB': 'Hindi',
+        'ALTE': 'Alternative English',
+        'NEPB': 'Nepali',
+        
+        // Set I Subjects
         'PHYS': 'Physics',
+        'NUTN': 'Nutrition',
         'CHEM': 'Chemistry',
-        'MATH': 'Mathematics',
-        'BIOL': 'Biology',
-        'HIST': 'History',
-        'GEOG': 'Geography',
-        'POLS': 'Political Science',
+        'GEGR': 'Geography',
         'ECON': 'Economics',
+        'ANTH': 'Anthropology',
+        'SOWB': 'Science of Well Being',
+        'MATH': 'Mathematics',
+        'AGRI': 'Agriculture',
+        'BIOS': 'Biological Science',
+        'STAT': 'Statistics',
+        'PSYC': 'Psychology',
+        'COMS': 'Computer Science',
+        'COMA': 'Modern Computer Application',
+        'EVSC': 'Environmental Science',
+        'HPED': 'Health & Physical Education',
+        'VISA': 'Visual Arts',
+        'MUSC': 'Music',
+        'CBST': 'Cyber Security',
+        'AIDS': 'Artificial Intelligence & Data Science',
+        'FSAQ': 'Fisheries & Aquaculture',
+        
+        // Set II Subjects
+        'ACCT': 'Accountancy',
+        'BSTD': 'Business Studies',
+        'CLPA': 'Commercial Law and Preliminaries of Auditing',
+        'CSTX': 'Costing and Taxation',
+        'APAI': 'Applied Artificial Intelligence',
+        'ENVS': 'Environment Studies',
+        'BMBS': 'Business Mathematics and Basic Statistics',
+        
+        // Set III Subjects
+        'POLS': 'Political Science',
         'EDCN': 'Education',
+        'JMCN': 'Journalism & Mass Communication',
+        'SNSK': 'Sanskrit',
+        'PRSN': 'Persian',
+        'ARBC': 'Arabic',
+        'BMSS': 'Basic Mathematics for Social Sciences',
         'PHIL': 'Philosophy',
-        'SOCG': 'Sociology'
+        'SOCG': 'Sociology',
+        'HIST': 'History',
+        'HDRM': 'Human Development & Resource Management',
+        
+        // Vocational Subjects
+        'ITEV': 'IT & ITeS',
+        'ATMV': 'Automobile',
+        'ORTV': 'Organised Retailing',
+        'SEUV': 'Security',
+        'HLCV': 'Health Care',
+        'ELTV': 'Electronics',
+        'THLV': 'Tourism & Hospitality',
+        'PLBV': 'Plumbing',
+        'CNSV': 'Construction',
+        'APLV': 'Apparel',
+        'BWLV': 'Beauty & Wellness',
+        'AGLV': 'Agriculture (Vocational)',
+        'POWV': 'Power',
+        'BSIV': 'Banking Financial Services & Insurance',
+        'FDPV': 'Food Processing',
+        'TELV': 'Telecom'
     };
     
     // Form submission handler
