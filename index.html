@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>West Bengal HS Result Portal</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- SEO Title -->
-    <title>West Bengal HS Result 2025 | WBCHSE 12th Result | Check Online</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Check West Bengal HS Result 2025 online from the official WBCHSE result portal. Download WB 12th marksheet, view toppers list, and get latest updates.">
-    <meta name="keywords" content="West Bengal HS Result 2025, WBCHSE Result 2025, WB 12th Result 2025, West Bengal Higher Secondary Result, West Bengal 12th Result, WB Board Result, download marksheet, wbresults.nic.in, West Bengal result portal">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>West Bengal HS Result Portal</title>
+        <link rel="stylesheet" href="styles1.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Add PDF generation libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-     <script src="https://cdn.counter.dev/script.js" data-id="33e5dc6a-6c72-41fd-83ac-18d3b6411bea" data-utcoffset="6"></script>
-</head>
+        <!-- SEO Title -->
+        <title>West Bengal HS Result 2025 | WBCHSE 12th Result | Check Online</title>
+    
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="Check West Bengal HS Result 2025 online from the official WBCHSE result portal. Download WB 12th marksheet, view toppers list, and get latest updates.">
+        <meta name="keywords" content="West Bengal HS Result 2025, WBCHSE Result 2025, WB 12th Result 2025, West Bengal Higher Secondary Result, West Bengal 12th Result, WB Board Result, download marksheet, wbresults.nic.in, West Bengal result portal">
+        
+        <!-- Add PDF generation libraries -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+         <script src="https://cdn.counter.dev/script.js" data-id="33e5dc6a-6c72-41fd-83ac-18d3b6411bea" data-utcoffset="6"></script>
+    </head>
 <body>
     <div class="container">
         <header>
@@ -29,6 +29,11 @@
         </header>
 
         <main>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="search">Search Result</button>
+                <button class="tab-btn" data-tab="compare">Compare Results</button>
+            </div>
+
             <section class="search-section" id="search-section">
                 <div class="search-card">
                     <h3>Search Your HS Result</h3>
@@ -37,16 +42,57 @@
                     <form id="search-form">
                         <div class="form-group">
                             <label for="roll-no">Roll Number</label>
-                            <input type="text" id="roll-no" placeholder="e.g. 4676217" required>
+                            <input type="text" id="roll-no" placeholder="Enetr RollNo" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="reg-no">Registration Number</label>
-                            <input type="text" id="reg-no" placeholder="e.g. 4232149920" required>
+                            <input type="text" id="reg-no" placeholder="Ente Registration No" required>
                         </div>
                         
                         <button type="submit" class="btn-search">
                             <i class="fas fa-search"></i> Search Result
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="compare-section" id="compare-section" style="display: none;">
+                <div class="search-card">
+                    <h3>Compare Results</h3>
+                    <p>Enter details of two students to compare their results</p>
+                    
+                    <form id="compare-form">
+                        <div class="compare-container">
+                            <div class="compare-student">
+                                <h4>Student 1</h4>
+                                <div class="form-group">
+                                    <label for="roll-no-1">Roll Number</label>
+                                    <input type="text" id="roll-no-1" placeholder="Enetr RollNo Student 1" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="reg-no-1">Registration Number</label>
+                                    <input type="text" id="reg-no-1" placeholder="Enter Registration No Student 1" required>
+                                </div>
+                            </div>
+                            
+                            <div class="compare-student">
+                                <h4>Student 2</h4>
+                                <div class="form-group">
+                                    <label for="roll-no-2">Roll Number</label>
+                                    <input type="text" id="roll-no-2" placeholder="Enetr RollNo Student 2" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="reg-no-2">Registration Number</label>
+                                    <input type="text" id="reg-no-2" placeholder="Enter Registration No Student 2" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn-search">
+                            <i class="fas fa-exchange-alt"></i> Compare Results
                         </button>
                     </form>
                 </div>
@@ -143,9 +189,121 @@
                 </div>
             </section>
 
+            <section class="comparison-result-section" id="comparison-result-section" style="display: none;">
+                <div class="result-card">
+                    <div class="result-header">
+                        <img src="https://wbresults.nic.in/images/wblogo.png" alt="West Bengal Board Logo" class="result-logo">
+                        <h3>West Bengal Council of Higher Secondary Education</h3>
+                        <h4>Result Comparison</h4>
+                    </div>
+                    
+                    <div class="comparison-info">
+                        <div class="comparison-student">
+                            <h5>Student 1</h5>
+                            <div class="info-row">
+                                <div class="info-item">
+                                    <span class="label">Name:</span>
+                                    <span class="value" id="student1-name">-</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Roll No:</span>
+                                    <span class="value" id="student1-roll">-</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comparison-student">
+                            <h5>Student 2</h5>
+                            <div class="info-row">
+                                <div class="info-item">
+                                    <span class="label">Name:</span>
+                                    <span class="value" id="student2-name">-</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Roll No:</span>
+                                    <span class="value" id="student2-roll">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-summary">
+                        <div class="summary-card">
+                            <div class="summary-title">Total Marks</div>
+                            <div class="summary-content">
+                                <div class="summary-item">
+                                    <span id="student1-total-marks">-</span>
+                                    <span class="summary-label">Student 1</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span id="student2-total-marks">-</span>
+                                    <span class="summary-label">Student 2</span>
+                                </div>
+                            </div>
+                            <div class="summary-diff" id="total-marks-diff">-</div>
+                        </div>
+                        
+                        <div class="summary-card">
+                            <div class="summary-title">Percentage</div>
+                            <div class="summary-content">
+                                <div class="summary-item">
+                                    <span id="student1-percentage">-</span>
+                                    <span class="summary-label">Student 1</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span id="student2-percentage">-</span>
+                                    <span class="summary-label">Student 2</span>
+                                </div>
+                            </div>
+                            <div class="summary-diff" id="percentage-diff">-</div>
+                        </div>
+                        
+                        <div class="summary-card">
+                            <div class="summary-title">Grade</div>
+                            <div class="summary-content">
+                                <div class="summary-item">
+                                    <span id="student1-grade">-</span>
+                                    <span class="summary-label">Student 1</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span id="student2-grade">-</span>
+                                    <span class="summary-label">Student 2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Student 1 Marks</th>
+                                    <th>Student 2 Marks</th>
+                                    <th>Difference</th>
+                                </tr>
+                            </thead>
+                            <tbody id="comparison-body">
+                                <!-- Comparison data will be inserted here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="result-footer">
+                        <div class="action-buttons">
+                            <button id="print-comparison-btn" class="btn-print">
+                                <i class="fas fa-print"></i> Print Comparison
+                            </button>
+                            <button id="compare-back-btn" class="btn-back">
+                                <i class="fas fa-arrow-left"></i> Compare Again
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <div id="loading" class="loading" style="display: none;">
                 <div class="spinner"></div>
-                <p>Fetching your result...</p>
+                <p>Fetching results...</p>
             </div>
 
             <div id="error-message" class="error-message" style="display: none;">
@@ -156,10 +314,10 @@
         </main>
 
         <footer>
-            <p>&copy; 2025 Koushik Mandal. All Rights Reserved.</p>
+            <p>&copy; 2025 West Bengal Council of Higher Secondary Education. All Rights Reserved.</p>
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script1.js"></script>
 </body>
 </html>
